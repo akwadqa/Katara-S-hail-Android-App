@@ -1,0 +1,297 @@
+<resources>
+
+    <string name="app_name">سهيل</string>
+
+    <string name="network_issue">خطأ في الشبكة</string>
+
+    <string name="under_development">تحت الصيانة</string>
+
+    <string name="json_parsing_error">خطأ في الإتصال</string>
+
+    <string name="no_internet_connection">خطأ في الشبكة</string>
+
+    <string name="something_went_wrong">حصل خطأ غير معروف. يرجى المحاولة لاحقاً!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="auction">المزاد</string>
+
+    <string name="app_auction">سهيل</string>
+
+    <string name="visit_the_exhibition">التذاكر</string>
+
+
+    -<string name="proceed_to_app">
+
+<u>تصفح التطبيق</u>
+
+</string>
+
+    <string name="sign_in">تسجيل الدخول</string>
+
+    <string name="new_auction">مزايد جديد</string>
+
+    <string name="new_bidder">التسجيل</string>
+
+    <string name="s_continue">استمر</string>
+
+    <string name="p_continue">استكمال الدفع</string>
+
+    <string name="a_continue">المتابعة للتطبيق</string>
+
+    <string name="sign_in_as_new_bidder">الدخول</string>
+
+    <string name="register_as_new_bidder">التسجيل</string>
+
+    <string name="passport_qatar_id_number">رقم الجواز او البطاقة الشخصية</string>
+
+    <string name="qatar_id_number">رقم البطاقة الشخصية</string>
+
+    <string name="expiry_date">تاريخ انتهاء الصلاحية</string>
+
+    <string name="my_account">حسابي</string>
+
+    <string name="account_status">حالة الحساب</string>
+
+    <string name="salman_mansour">سلمان منصور</string>
+
+    <string name="account_in_progress">الحساب قيد الاجراء</string>
+
+    <string name="pending_payment">معلق للدفع</string>
+
+    <string name="account_done">تم تفعيل الحساب</string>
+
+    <string name="is_for_account">حساب زائر للمعرض</string>
+
+
+    <string name="mobile_number">رقم الجوال</string>
+
+    <string name="book_ticket">احجز تذكرة</string>
+
+    <string name="booked_ticket">التذاكر المحجوزة</string>
+
+    <string name="visit_time">توقيت الزيارة</string>
+
+    <string name="visit_date">تاريخ الزيارة</string>
+
+    <string name="full_name">الاسم بالكامل</string>
+
+    <string name="my_ticket">التذاكر</string>
+
+    <string name="visit_ticket">تذكرة زيارة</string>
+
+    <string name="welcome_to_s_hail">مرحبا بك في سهيل</string>
+
+    <string name="qid_empty">يرجى ادخال رقم البطاقة الشخصية</string>
+
+    <string name="qid_time">يرجى اختيار تاريخ الزيارة</string>
+
+    <string name="qid_invalid">يرجى ادخال رقم البطاقة الشخصية بشكل صحيح</string>
+
+    <string name="otp_empty">يرجى إدخال رقم التحقق</string>
+
+    <string name="otp_invalid">يرجى إدخال رقم التحقق بشكل صحيح</string>
+
+    <string name="confirm_mobile_number">يرجى إخال رقم الجوال</string>
+
+    <string name="verification_code_has_been_sent_to_your_mobile">تم ارسال رقم التحقق عبر رسالة نصية قصيرة</string>
+
+    <string name="enter_date">يرجى إدخال تاريخ انتهاء الصلاحية</string>
+
+    <string name="valid_date">يرجى إدخال تاريخ انتهاء الصلاحية بشكل صحيح</string>
+
+    <string name="enter_name">يرجى إدخال الاسم بالكامل</string>
+
+    <string name="enter_email">يرجى إدخال البريد الالكتروني</string>
+
+    <string name="valid_email">يرجى ادخال البريد الالكتروني بشكل صحيح</string>
+
+    <string name="enter_number">يرجى ادخال رقم الجوال</string>
+
+    <string name="enter_visit_date">يرجى ادخال تاريخ الزيارة</string>
+
+    <string name="select_front">يرجى ارفاق صورة من البطاقة الشخصية - الوجه الأمامي</string>
+
+    <string name="select_back">يرجى ارفاق صورة من البطاقة الشخصية - الوجه الخلفي</string>
+
+    <string name="select_switch">يرجى الموافقة على الشروط والأحكام</string>
+
+    <string name="title_activity_main2">MainActivity2</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_header_title">Android Studio</string>
+
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="action_settings">الاعدادات</string>
+
+    <string name="menu_home">الرئيسية</string>
+
+    <string name="menu_search">بحث</string>
+
+    <string name="menu_ticket">التذاكر</string>
+
+    <string name="menu_account">الحساب</string>
+
+    <string name="bird_auction">المزاد</string>
+
+    <string name="the_exhibition_news">اخبار المعرض</string>
+
+    <string name="no_auctions">لا يوجد مزادات فعالة في هذه الفئة حالياً</string>
+
+    <string name="ticket_is_valid_for_one_visit"> التذكرة صالحة لزيارة واحدة</string>
+
+    <string name="only_those_whose_are_vaccinated_against_covid_19_virus_are_allowed"> يسمح الدخول فقط للاشخاص الذين استكملوا جرعات اللقاح ضد كوفيد 19 </string>
+
+    <string name="add_companion">اضافة مرافق</string>
+
+    <string name="add_companions">اضافة مرافق</string>
+
+    <string name="relationship">طبيعة العلاقة</string>
+
+    <string name="companion_name">اسم المرافق</string>
+
+    <string name="add">اضافة</string>
+
+    <string name="maximum_of_companion_is_3_companion">الحد الاقصى المسموح به للمرافقين هو </string>
+
+    <string name="r_name">يرجى إدخال الاسم</string>
+
+    <string name="golden_auction">المزاد الذهبي</string>
+
+    <string name="general_auction">المزاد العام</string>
+
+    <string name="view_all">عرض الكل</string>
+
+    <string name="all_news">الاخبار</string>
+
+    <string name="ok">موافق</string>
+
+    <string name="cancel">إلغاء</string>
+
+    <string name="login_register">تسجيل الدخول</string>
+
+    <string name="sign_msg">يجب تسجيل الدخول لعرض هذه الصفحة</string>
+
+    <string name="logout">تسجيل الخروج</string>
+
+    <string name="logout_msg">هل انت متأكد من تسجيل الخروج؟</string>
+
+    <string name="add_auction">اضافة مزايدة</string>
+
+    <string name="top_10_auctions">اعلى 10 مزايدات</string>
+
+    <string name="previous_auction">المزايدات السابقة</string>
+
+    <string name="previous_auctions">المزايدات السابقة</string>
+
+    <string name="no_auction_found">لم يتم العثور على مزادات سابقة</string>
+
+    <string name="cav">تأكيد مبلغ المزايدة</string>
+
+    <string name="pep">يرجى إدخال السعر </string>
+
+    <string name="highest_auction">اعلى مزايدة</string>
+
+    <string name="expiry_date_should_be_in_yyyy_mm_dd_format">يجب أن يكون تاريخ انتهاء الصلاحية بتنسيق صحيح</string>
+
+    <string name="min_bet">الحد الادنى لمبلغ المزايدة يجب ان يكون</string>
+
+    <string name="items">المعروضات</string>
+
+    <string name="auction_value">قيمة المزاد</string>
+
+    <string name="full_name_s">الاسم بالكامل</string>
+
+    <string name="passport_no_s">رقم الجواز</string>
+    <string name="hint_passport_no_s">ادخل رقم الجواز</string>
+    <string name="hint_full_name_s">ادخل الاسم الكامل</string>
+    <string name="hint_email_s">اختياري</string>
+
+
+    <string name="nationality_s">الجنسية</string>
+
+    <string name="mob_no_s">رقم الجوال</string>
+
+    <string name="email">البريد الالكتروني</string>
+
+    <string name="qatari_id_copy">صورة البطاقة الشخصية</string>
+
+    <string name="confirm">تأكيد</string>
+
+    <string name="description">الوصف</string>
+
+
+
+    <string name="title_activity_main3">MainActivity3</string>
+
+    <string name="menu_gallery">معرض الصور</string>
+    <string name="menu_slideshow">العارض</string>
+
+    <string name="n_f_d">لا يوجد تذاكر محجوزة بعد</string>
+    <string name="max_c">لا يمكن إضافة مرافقين اكثر </string>
+    <string name="pecn">يرجى ادخال اسم المرافق</string>
+    <string name="enter_otp">يرجى ادخال رقم تحقق صحيح</string>
+    <string name="continue_to_pay">المتابعة الى الدفع</string>
+    <string name="sign_out_from_app">تسجيل الخروج</string>
+    <string name="contact_us">تواصل معنا</string>
+    <string name="exhibition_location">موقع المعرض</string>
+    <string name="call_us">اتصل بنا</string>
+    <string name="already_registered">انت مسجل بالفعل</string>
+    <string name="s_hail_auction">مزاد سهيل</string>
+    <string name="verify_success">تم التحقق بنجاح</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="by_continuing_and_completing_the_registration_you_are_considered_to_agree_to_the_terms_and_conditions">بالمتابعة، تعتبر موافق على الشروط والأحكام</string>
+    <string name="user_reg_success">تم التسجيل بنجاح</string>
+    <string name="auction_nends_at">ينتهي\nخلال</string>
+    <string name="left">متبقي</string>
+    <string name="update">تحديث</string>
+    <string name="no_slots">لا يوجد مواعيد متاحة لحجز التذاكر الآن. يرجى المحاولة لاحقاً</string>
+    <string name="ps_enter_otp">يرجى إدخال رقم التحقق</string>
+    <string name="new_ticket">تذكرة جديدة</string>
+    <string name="guest">دخول كضيف</string>
+    <string name="children_under_the_age_of_12_are_not_allowed_to_enter_the_exhibition">الدخول الى المعرض غير مسموح للأطفال تحت 12 سنة.</string>
+    <string name="terms_and_conditions">شروط وأحكام مزاد سهيل
+مزاد سهيل هو برنامج الكتروني يعمل من خلال موقع Mazad-shail.net ويتم عن طريقه المشاركة في المزايدة على الصقور المعروضة في مزاد معرض كتارا الدولي للصيد والصقور "سهيل". يدار الكترونيًا وبشفافية تامة حيث أن جميع المشاركين بالمزاد يمكنهم متابعة عملية تقدم المزايدات ومعرفة الفائز.
+التسجيل
+تكون عملية التسجيل شخصية بالمزاد، حيث يلتزم المشارك بتوفير البيانات الصحيحة المطلوبة. وتقوم لجنة المزاد بمراجعة يدوية لكل الحسابات للتأكد من مدى صحة وتطابق البيانات.
+شروط التسجيل
+- يجب على المشارك أن يكون قطري الجنسية
+- قيمة المشاركة في المزاد ٥٠٠ ريال قطري غير مستردة تدفع الكترونياً عن طريق الموقع
+- يمنح المزايد بطاقة ذهبية تخوله الدخول للمعرض في جميع أيام المعرض و في أي وقت من الأوقات التي يكون فيها المعرض مفتوحاً لاستقبال الجمهور دون الحاجة لحجز تذكرة دخول.
+- تعرض الصقور في المكان المخصص لمزاد سهيل في موقع المعرض ويتم عرض صور لنفس الصقور المزايد عليها على تطبيق المزاد
+- عند البدء بعملية المزايدة يعني ضمنيا أنه قد تمت معاينة الصقر والتحقق من أوصافه
+-  يمكن لصاحب الحساب المزايدة على أكثر من صقر
+- يلتزم صاحب أعلى سعر عند انتهاء عملية المزايدة بإتمام عملية الشراء من مالك الصقر
+- يسمح المشاركة بالنيابة حضورياً عن أي مشارك. على أن يستظهر النائب بالبطاقة الشخصية لنادبه
+- في حال كان المشارك هو المزايد الرابح في مزاد أو أكثر وأبدى عدم رغبته في الصقر، عندها يرجى التواصل مع لجنة المزاد لإلغاء الترسية.
+- لإعطاء فرصة للمزايدين على التنافس بشكل صحيح، إذا انتهى وقت المزاد ولاتزال المنافسة قائمة يتم طلب فتح المزاد استثنائيا من لجنة المزاد على شرط ان يكون المتنافسون موجودين بالمعرض.
+- في حال انتهى المزاد ولم يصل السعر للحد المطلوب من المالك يلغى المزاد.
+- عند انتهاء المزايدة على تطبيق الجوال، بإمكان المزايد مواصلة العملية حضوريا أو عن بعد. وذلك بالتوجه الى مسرح المزاد بالمعرض أو من خلال التواصل مع اللجنة المنظمة.
+</string>
+    <string name="version">Version:</string>
+    <string name="slots">لا يوجد مواعيد متاحة لحجز التذاكر الآن.</string>
+    <string name="code">+479</string>
+    <string name="premium_products">منتجات مميزة</string>
+    <string name="exhibitors">العارضين</string>
+    <string name="exhibitor_products">منتجات العارض</string>
+    <string name="product_details">تفاصيل المنتج</string>
+    <string name="contact_vendor">تواصل مع العارض</string>
+    <string name="contact_phone">اتصال هاتفي</string>
+    <string name="send_email">بريد الكتروني</string>
+    <string name="register_by_passport">التسجيل برقم الجواز</string>
+    <string name="register_by_qid">التسجيل برقم البطاقة الشخصية</string>
+    <string-array name="nationality_auction">
+        <item>قطري</item>
+        <item>جنسية أخرى</item>
+    </string-array>
+
+</resources>

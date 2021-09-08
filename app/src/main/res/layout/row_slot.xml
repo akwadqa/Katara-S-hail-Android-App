@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/_5sdp"
+    android:id="@+id/rl_detail"
+    tools:context=".view.activities.SplashActivity">
+
+    <TextView
+        android:id="@+id/tv_slot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:text="4 to 8 pm"
+        android:background="@drawable/button_rounded_more"
+        android:textColor="@color/white"
+        style="@style/normal"
+        android:textSize="@dimen/normal"
+         />
+
+
+</RelativeLayout>

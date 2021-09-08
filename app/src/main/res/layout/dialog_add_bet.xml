@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:elevation="@dimen/_20sdp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/top_white_rounded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:textColor="@color/text"
+                    android:drawableTop="@drawable/profile_placeholder"
+                    style="@style/bold"
+                    android:textSize="@dimen/normal"
+                     />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/auction_value"
+                    style="@style/bold"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/small"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:layout_toStartOf="@+id/tv_currency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_stroke"
+                        android:padding="@dimen/_10sdp">
+
+                        <EditText
+                            android:id="@+id/et_price"
+                            android:inputType="number"
+                            android:gravity="start|center_vertical"
+                            android:textSize="@dimen/normal"
+                            style="@style/normal"
+                            android:layout_centerVertical="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_toStartOf="@+id/tv_price"
+                            android:background="@null" />
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end|center_vertical"
+                            android:drawableStart="@drawable/trending_up"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            style="@style/normal"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/normal" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/tv_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/grey_rounded_less"
+                        android:padding="@dimen/_10sdp"
+                        android:text="QAR"
+                        style="@style/bold"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/large"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_min_bet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    style="@style/bold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/small"
+                     />
+
+
+                <TextView
+                    android:id="@+id/tv_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:background="@drawable/button_rounded"
+                    android:gravity="center"
+                    android:text="@string/add"
+                    style="@style/bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal"
+                     />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+</layout>

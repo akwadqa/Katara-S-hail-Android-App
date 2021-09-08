@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.activities.SplashActivity"
+        android:background="@drawable/background_two">
+
+        <LinearLayout
+            android:paddingTop="@dimen/_50sdp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:paddingLeft="@dimen/_60sdp"
+            android:paddingRight="@dimen/_60sdp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/white_logo" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_50sdp"
+            android:id="@+id/tv_signin"
+            android:background="@drawable/white_rounded"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_40sdp"
+            android:text="@string/sign_in"
+            style="@style/bold"
+            android:gravity="center"
+
+            android:textColor="@color/primary"
+            android:textSize="@dimen/normal"/>
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/white_rounded"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_40sdp"
+            android:text="@string/new_bidder"
+            android:gravity="center"
+            style="@style/bold"
+
+            android:textColor="@color/primary"
+            android:textSize="@dimen/normal"/>
+
+
+
+    </LinearLayout>
+
+    </RelativeLayout>>
+
+</layout>

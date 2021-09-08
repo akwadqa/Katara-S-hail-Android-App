@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <integer name="rtl_mirror_flip">180</integer>
+
+</resources>

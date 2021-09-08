@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_250sdp"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="@dimen/_10sdp"
+    card_view:cardElevation="@dimen/_10sdp"
+    android:id="@+id/rl_detail"
+    android:layout_marginTop="@dimen/_10sdp"
+    tools:context=".view.activities.SplashActivity">
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ivImage"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius_top_left="@dimen/_10sdp"
+        app:riv_corner_radius_top_right="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:src="@drawable/overlay"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius_top_left="@dimen/_10sdp"
+                app:riv_corner_radius_top_right="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"/>
+
+            <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                android:gravity="start"
+                android:id="@+id/tv_name"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/booked_ticket"
+                style="@style/bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal"
+                 />
+
+            <TextView
+                android:gravity="start"
+                android:id="@+id/tv_date"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/booked_ticket"
+                style="@style/normal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+ <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:orientation="vertical">
+
+
+        <TextView
+            android:gravity="start"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            style="@style/bold"
+            android:textColor="@color/text"
+            android:textSize="@dimen/normal"
+             />
+
+        <TextView
+            android:gravity="start"
+            android:id="@+id/tv_desc"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/booked_ticket"
+            style="@style/normal"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/small" />
+
+ </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

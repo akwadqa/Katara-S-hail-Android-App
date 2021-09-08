@@ -1,0 +1,53 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CoachApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/primary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DialogBounceAnimation">
+        <item name="android:windowEnterAnimation">@anim/anim_zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_zoom_out</item>
+    </style>
+
+    <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/primary</item>
+        <!--selected Item color-->
+        <item name="colorControlActivated">@color/text</item>
+        <!-- arrow bordercolor(<>)-->
+        <item name="android:selectableItemBackgroundBorderless">@color/primary</item>
+        <!-- Highlight item color-->
+        <item name="colorControlHighlight">@color/primary</item>
+        <!--Calender Background color -->
+        <item name="android:windowBackground">@color/primary</item>
+        <!-- Ok Cancel Color-->
+        <item name="android:textColor">@color/white</item>
+        <!-- Week TextColor-->
+        <item name="android:textColorSecondary">@color/white</item>
+        <!-- Calender Number color arrow color (< >) -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--day , month-->
+        <item name="android:textColorPrimaryInverse">@color/white</item>
+        <!-- year-->
+        <item name="android:textColorSecondaryInverse">@color/white</item>
+    </style>
+
+    <style name="Theme.CoachApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="Theme.CoachApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.CoachApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

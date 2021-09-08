@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#A10833</color>
+    <color name="pink">#F6EDED</color>
+    <color name="green">#59C278</color>
+    <color name="text">#4F4F4F</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_grey">#F0F0F0</color>
+    <color name="background">#FAFAFA</color>
+    <color name="progress">#E04B4B</color>
+    <color name="check_soon">#F44336</color>
+    <color name="auction_full">#F8ECC9</color>
+    <color name="light_green">#E3F9EA</color>
+    <color name="grey">#8C8C8C</color>
+    <color name="box_color">#E6ECF0</color>
+    <color name="blue">#4B7DE0</color>
+    <color name="semi_transparent">#90000000</color>
+    <color name="brown">#CE8955</color>
+    <color name="dark_brown">#9E4C0D</color>
+    <color name="hint">#DCDCDC</color>
+
+</resources>

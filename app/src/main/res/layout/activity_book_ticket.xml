@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".view.activities.BookTicketActivity">
+
+        <include layout="@layout/component_top" />
+
+        <RelativeLayout
+            android:id="@+id/rl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/ImageMirror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/my_ticket"
+                android:textColor="@color/white"
+                android:textSize="@dimen/large"
+                 />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_continue"
+            android:layout_below="@id/rl_toolbar"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/white_rounded">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/iv_component"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:src="@drawable/red_component" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/iv_component"
+                            android:text="@string/book_ticket"
+                            style="@style/bold"
+                            android:textColor="@color/text"
+                            android:textSize="@dimen/normal" />
+
+                        <TextView
+                            android:id="@+id/tv_companion"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/blue_stroke"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:text="@string/add_companion"
+                            style="@style/normal"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/very_small" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:text="@string/full_name"
+                        style="@style/bold"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/normal" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/name_til"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/box_color"
+                        app:boxStrokeWidth="@dimen/_1sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/name_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:drawableStart="@drawable/name"
+                            style="@style/normal"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:textSize="@dimen/small" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/mobile_number"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/normal"
+                         />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:visibility="gone"
+                        android:id="@+id/number_til"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:boxStrokeColor="@color/box_color"
+                        app:boxStrokeWidth="@dimen/_1sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/number_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:drawableStart="@drawable/number"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:inputType="number"
+                            android:text="+974-"
+                            android:textSize="@dimen/small" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/visit_date"
+                        style="@style/bold"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/normal" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/visit_time"
+                        style="@style/bold"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/normal" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        style="@style/normal"
+                        android:drawableStart="@drawable/bx"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/ticket_is_valid_for_one_visit"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:textColor="@color/grey"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textSize="@dimen/small"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        style="@style/normal"
+                        android:drawableStart="@drawable/bx"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/only_those_whose_are_vaccinated_against_covid_19_virus_are_allowed"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:textColor="@color/grey"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textSize="@dimen/small"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        style="@style/normal"
+                        android:drawableStart="@drawable/bx"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/children_under_the_age_of_12_are_not_allowed_to_enter_the_exhibition"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:textColor="@color/grey"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textSize="@dimen/small"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_continue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/button_rounded"
+            android:gravity="center"
+            style="@style/bold"
+            android:text="@string/s_continue"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal"/>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,8 @@
+
+fkotlin:S101"ORename class "API_SUCCEED" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(ëÛ¯Î
+lkotlin:S101"URename class "API_TOKEN_EXPIRED" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(ÄË€±
+hkotlin:S101"QRename class "API_EXCEPTION" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(šıÅº
+rkotlin:S101""VRename class "API_VIEWMODEL_DATA" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(í–°Ûÿÿÿÿÿ
+kkotlin:S101)"ORename class "API_SUCCEED" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(ÅØúÿÿÿÿ
+lkotlin:S101."URename class "API_TOKEN_EXPIRED" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(ÿ·ß
+hkotlin:S1013"QRename class "API_EXCEPTION" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.(¡‹‘Ê

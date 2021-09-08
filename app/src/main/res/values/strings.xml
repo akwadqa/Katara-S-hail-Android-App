@@ -1,0 +1,295 @@
+<resources>
+    <string name="app_name">"S'hail"</string>
+
+    <string name="network_issue">Network Issue</string>
+
+    <string name="under_development">Under Development</string>
+
+    <string name="json_parsing_error">Json Parsing Error</string>
+
+    <string name="no_internet_connection">No Internet Connection</string>
+
+    <string name="something_went_wrong">Something went wrong. Please try again!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="hello_blank_fragment">Hello Blank Fragment</string>
+
+    <string name="auction">Auction</string>
+
+    <string name="app_auction">"S'hail"</string>
+
+    <string name="visit_the_exhibition">Tickets</string>
+
+
+    -
+    <string name="proceed_to_app">
+
+<u>Browse the Application</u>
+
+</string>
+
+    <string name="sign_in">Sign In</string>
+
+    <string name="new_auction">New Bidder</string>
+
+    <string name="new_bidder">Registration</string>
+
+    <string name="s_continue">Continue</string>
+
+    <string name="p_continue">Proceed to Payment</string>
+
+    <string name="a_continue">Continue to App</string>
+
+    <string name="sign_in_as_new_bidder">Sign-in</string>
+
+    <string name="register_as_new_bidder">Register</string>
+
+    <string name="qatar_id_number">Qatari ID Number</string>
+
+    <string name="passport_qatar_id_number">Passport or ID Number</string>
+
+
+    <string name="expiry_date">Expiry Date</string>
+
+    <string name="my_account">My Account</string>
+
+    <string name="account_status">Account Status</string>
+
+    <string name="salman_mansour">Salman Mansour</string>
+
+    <string name="account_in_progress">Account in Progress</string>
+
+    <string name="pending_payment">Pending Payment</string>
+
+    <string name="account_done">The account has been activated</string>
+
+    <string name="is_for_account">Exhibition Visitor Account</string>
+
+    <string name="mobile_number">Mobile Number</string>
+
+    <string name="book_ticket">Book Ticket</string>
+
+    <string name="booked_ticket">Booked Tickets</string>
+
+    <string name="visit_time">Visit Time</string>
+
+    <string name="visit_date">Visit Date</string>
+
+    <string name="full_name">Full Name</string>
+
+    <string name="my_ticket">My Tickets</string>
+
+    <string name="visit_ticket">Visit Ticket</string>
+
+    <string name="welcome_to_s_hail">Welcome to "S'hail"</string>
+
+    <string name="qid_empty">Please Enter Your Qatar ID Number </string>
+
+    <string name="qid_time">Please Select Visit Time </string>
+
+    <string name="qid_invalid">Please Enter a Valid ID Number </string>
+
+    <string name="otp_empty">Please Enter OTP</string>
+
+    <string name="otp_invalid">Please Enter Valid OTP</string>
+
+    <string name="confirm_mobile_number">Please Enter Mobile Number</string>
+
+    <string name="verification_code_has_been_sent_to_your_mobile">Verification Code Has Been Sent To You By SMS</string>
+
+    <string name="enter_date">Please Enter Expiry Date</string>
+
+    <string name="valid_date">Please Enter Valid Expiry Date</string>
+
+    <string name="enter_name">Please Enter Full Name</string>
+
+    <string name="enter_email">Please Enter Email Address</string>
+
+    <string name="valid_email">Please Enter Valid Email Address</string>
+
+    <string name="enter_number">Please Enter Mobile Number</string>
+
+    <string name="enter_visit_date">Please Enter Visit Date</string>
+
+    <string name="select_front">Please upload a photo of your QID - front side</string>
+
+    <string name="select_back">Please upload a photo of your QID - back side</string>
+
+    <string name="select_switch">Please Accept The Terms and Conditions</string>
+
+    <string name="title_activity_main2">MainActivity2</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_header_title">Android Studio</string>
+
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+
+    <string name="menu_search">Search</string>
+
+    <string name="menu_ticket">Tickets</string>
+
+    <string name="menu_account">Account</string>
+
+    <string name="bird_auction">Auction</string>
+
+    <string name="the_exhibition_news">The Exhibition News</string>
+
+    <string name="no_auctions">No auctions are available in the selected category</string>
+
+    <string name="ticket_is_valid_for_one_visit">Ticket is valid for one visit</string>
+
+    <string name="only_those_whose_are_vaccinated_against_covid_19_virus_are_allowed">Only Those Who Are Vaccinated Against Covid-19 Virus Are Allowed</string>
+
+    <string name="add_companion">Add Companion</string>
+
+    <string name="add_companions">Add Companions</string>
+
+    <string name="relationship">Relationship</string>
+
+    <string name="companion_name">Companion Name</string>
+
+    <string name="add">Add</string>
+
+    <string name="maximum_of_companion_is_3_companion">Maximim Number of Companions is </string>
+
+    <string name="r_name">Please Enter Name</string>
+
+    <string name="golden_auction">Golden Auction</string>
+
+    <string name="general_auction">General Auction</string>
+
+    <string name="view_all">View All</string>
+
+    <string name="all_news">All News</string>
+
+    <string name="ok">Ok</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="login_register">Sign-in</string>
+
+    <string name="sign_msg">Please sign in to view this page</string>
+
+    <string name="logout">Log Out</string>
+
+    <string name="logout_msg">Are you sure you want to log out ?</string>
+
+    <string name="add_auction">Add a Bid</string>
+
+    <string name="top_10_auctions">Top 10 Bids</string>
+
+    <string name="previous_auction">Previous Bids</string>
+
+    <string name="previous_auctions">Previous Bids</string>
+
+    <string name="no_auction_found">No Previous Auctions Found</string>
+
+    <string name="cav">Confirm Bid Value</string>
+
+    <string name="pep">Please Enter Price</string>
+
+    <string name="highest_auction">Highest Bid</string>
+
+    <string name="expiry_date_should_be_in_yyyy_mm_dd_format">Expiry date should be in YYYY-MM-DD format</string>
+
+    <string name="min_bet">The minimum bet should be</string>
+
+    <string name="items">Products</string>
+
+    <string name="auction_value">Auction Value</string>
+
+    <string name="full_name_s">Full Name</string>
+
+    <string name="passport_no_s">Passport No.</string>
+
+    <string name="hint_passport_no_s">Passport Number</string>
+
+    <string name="hint_full_name_s">Enter your full name</string>
+    <string name="hint_email_s">Optional</string>
+
+    <string name="nationality_s">Nationality</string>
+
+    <string name="mob_no_s">Mobile Number</string>
+
+    <string name="email">Email</string>
+
+    <string name="qatari_id_copy">Qatari ID Copy</string>
+
+    <string name="confirm">Confirm</string>
+
+    <string name="description">Description</string>
+
+
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="n_f_d">There are no tickets to show</string>
+    <string name="max_c">Maximum number of companions you can add is </string>
+    <string name="pecn">Please Enter Companion Name</string>
+    <string name="enter_otp">Please Enter Correct OTP</string>
+    <string name="continue_to_pay">Payment</string>
+    <string name="sign_out_from_app">Sign out from app</string>
+    <string name="contact_us">Contact us</string>
+    <string name="exhibition_location">Exhibition Location</string>
+    <string name="call_us">Call us</string>
+    <string name="already_registered">You are already registered</string>
+    <string name="s_hail_auction">"S'hail" Auction</string>
+    <string name="verify_success">Verified Successfully</string>
+    <string name="change_language">Change language</string>
+    <string name="by_continuing_and_completing_the_registration_you_are_considered_to_agree_to_the_terms_and_conditions">By continuing and completing the registration, you are considered to agree to the terms and conditions</string>
+    <string name="user_reg_success">User has been registered successfully</string>
+    <string name="left">Left</string>
+    <string name="auction_nends_at">Auction\nends at</string>
+    <string name="update">Update</string>
+    <string name="no_slots">No time slots are available for Tickets booking. Check again later</string>
+    <string name="ps_enter_otp">Please enter OTP</string>
+    <string name="new_ticket">New ticket</string>
+    <string name="guest">Guest</string>
+    <string name="register_by_qid">Register by QID</string>
+    <string name="register_by_passport">Register by Passport</string>
+    <string name="children_under_the_age_of_12_are_not_allowed_to_enter_the_exhibition">Children under the age of 12 are not allowed to enter the exhibition</string>
+    <string name="terms_and_conditions">شروط وأحكام مزاد سهيل
+مزاد سهيل هو برنامج الكتروني يعمل من خلال موقع Mazad-shail.net ويتم عن طريقه المشاركة في المزايدة على الصقور المعروضة في مزاد معرض كتارا الدولي للصيد والصقور "سهيل". يدار الكترونيًا وبشفافية تامة حيث أن جميع المشاركين بالمزاد يمكنهم متابعة عملية تقدم المزايدات ومعرفة الفائز.
+التسجيل
+تكون عملية التسجيل شخصية بالمزاد، حيث يلتزم المشارك بتوفير البيانات الصحيحة المطلوبة. وتقوم لجنة المزاد بمراجعة يدوية لكل الحسابات للتأكد من مدى صحة وتطابق البيانات.
+شروط التسجيل
+- يجب على المشارك أن يكون قطري الجنسية
+- قيمة المشاركة في المزاد ٥٠٠ ريال قطري غير مستردة تدفع الكترونياً عن طريق الموقع
+- يمنح المزايد بطاقة ذهبية تخوله الدخول للمعرض في جميع أيام المعرض و في أي وقت من الأوقات التي يكون فيها المعرض مفتوحاً لاستقبال الجمهور دون الحاجة لحجز تذكرة دخول.
+- تعرض الصقور في المكان المخصص لمزاد سهيل في موقع المعرض ويتم عرض صور لنفس الصقور المزايد عليها على تطبيق المزاد
+- عند البدء بعملية المزايدة يعني ضمنيا أنه قد تمت معاينة الصقر والتحقق من أوصافه
+-  يمكن لصاحب الحساب المزايدة على أكثر من صقر
+- يلتزم صاحب أعلى سعر عند انتهاء عملية المزايدة بإتمام عملية الشراء من مالك الصقر
+- يسمح المشاركة بالنيابة حضورياً عن أي مشارك. على أن يستظهر النائب بالبطاقة الشخصية لنادبه
+- في حال كان المشارك هو المزايد الرابح في مزاد أو أكثر وأبدى عدم رغبته في الصقر، عندها يرجى التواصل مع لجنة المزاد لإلغاء الترسية.
+- لإعطاء فرصة للمزايدين على التنافس بشكل صحيح، إذا انتهى وقت المزاد ولاتزال المنافسة قائمة يتم طلب فتح المزاد استثنائيا من لجنة المزاد على شرط ان يكون المتنافسون موجودين بالمعرض.
+- في حال انتهى المزاد ولم يصل السعر للحد المطلوب من المالك يلغى المزاد.
+- عند انتهاء المزايدة على تطبيق الجوال، بإمكان المزايد مواصلة العملية حضوريا أو عن بعد. وذلك بالتوجه الى مسرح المزاد بالمعرض أو من خلال التواصل مع اللجنة المنظمة.
+</string>
+    <string name="version">Version:</string>
+    <string name="slots">Date and time slots are not available</string>
+    <string name="code">+974</string>
+    <string name="premium_products">Premium products</string>
+    <string name="exhibitors">Exhibitors</string>
+    <string name="exhibitor_products">Exhibitor products</string>
+    <string name="product_details">Product details</string>
+    <string name="contact_vendor">Contact vendor</string>
+    <string name="contact_phone">Contact phone</string>
+    <string name="send_email">Send email</string>
+
+    <string-array name="nationality_auction">
+        <item>Qatari</item>
+        <item>Other Nationality</item>
+    </string-array>
+</resources>
