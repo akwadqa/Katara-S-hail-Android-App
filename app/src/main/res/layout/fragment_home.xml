@@ -83,7 +83,7 @@
                      />
 
                 <TextView
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:id="@+id/tv_product"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
