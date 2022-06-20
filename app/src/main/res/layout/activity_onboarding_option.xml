@@ -55,8 +55,7 @@
             android:textSize="@dimen/normal"/>
 
 
-
-    </LinearLayout>
+        </LinearLayout>
 
     </RelativeLayout>>
 

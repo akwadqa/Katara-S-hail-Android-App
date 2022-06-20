@@ -50,4 +50,10 @@ class AuctionRepo : GenericApiRequest<Any>() {
         }
     }
 
+    suspend fun getAuctionIsForQatari() : Any? {
+        return apiRequest {
+            ApiManager.apiUpdateClient.getAuctionIsForQatar()
+        }
+    }
+
 }

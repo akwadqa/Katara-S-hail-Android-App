@@ -32,9 +32,11 @@
 
     <string name="sign_in">Sign In</string>
 
-    <string name="new_auction">New Bidder</string>
+    <string name="new_auction">New Auction</string>
 
-    <string name="new_bidder">Registration</string>
+    <string name="new_bidder">New Bidder</string>
+
+    <string name="registration">Registration</string>
 
     <string name="s_continue">Continue</string>
 
@@ -213,7 +215,11 @@
 
     <string name="passport_no_s">Passport No.</string>
 
+    <string name="passport_or_id_no_s">Passport Or ID No.</string>
+
     <string name="hint_passport_no_s">Passport Number</string>
+
+    <string name="hint_passport_or_id_no_s">Passport Or ID Number</string>
 
     <string name="hint_full_name_s">Enter your full name</string>
     <string name="hint_email_s">Optional</string>
@@ -226,10 +232,21 @@
 
     <string name="qatari_id_copy">Qatari ID Copy</string>
 
+    <string name="qatari_id_or_passport_copy">Qatari ID Or Passport Copy</string>
+
     <string name="confirm">Confirm</string>
 
     <string name="description">Description</string>
 
+    <string name="qatari">Qatari</string>
+
+    <string name="none_qatari">None-Qatari</string>
+
+    <string name="exhibitor">Exhibitor</string>
+
+    <string name="exhibition">Exhibition</string>
+
+    <string name="upgrade">Upgrade</string>
 
     <string name="title_activity_main3">MainActivity3</string>
     <string name="menu_gallery">Gallery</string>

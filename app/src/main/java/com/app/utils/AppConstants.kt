@@ -72,6 +72,8 @@ object ApiCodes {
     const val GET_SHOP_DETAILS = 21
     const val GET_ISD = 22
     const val GET_COUNTRY = 23
+    const val GET_AUCTION_IS_FOR_QATARI = 24
+    const val REQUEST_ACCOUNT_UPGRADE = 24
 }
 
 object RequestCodes {

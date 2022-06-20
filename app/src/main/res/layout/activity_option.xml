@@ -54,6 +54,19 @@
             android:textSize="@dimen/normal"/>
 
         <TextView
+            android:id="@+id/tv_exhibitor"
+            style="@style/bold"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/white_rounded"
+            android:gravity="center"
+            android:text="@string/exhibitor"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/normal" />
+
+        <TextView
             android:id="@+id/tv_proceed"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_width="match_parent"

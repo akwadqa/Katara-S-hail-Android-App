@@ -1,28 +1,36 @@
 package com.app.view.activities
 
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.app.BuildConfig
 import com.app.R
 import com.app.databinding.ActivityMainBinding
-import com.app.utils.AppConstants
-import com.app.utils.SharedPreferencesManager
+import com.app.model.api.API_VIEWMODEL_DATA
+import com.app.model.dataclasses.AccountStatusParamModel
+import com.app.model.dataclasses.UserTokenModel
+import com.app.model.repos.AccountStatusRepo
+import com.app.utils.*
 import com.app.view.fragments.AccountFragment
 import com.app.view.fragments.HomeFragment
 import com.app.view.fragments.ProductFragment
 import com.app.view.fragments.TicketFragment
+import com.app.viewmodel.HomeViewModel
+import com.google.gson.Gson
 import java.util.*
 
 class MainActivity : BaseActivity(), View.OnClickListener {
-
     private lateinit var binding: ActivityMainBinding
+    private val homeViewModel by lazy { ViewModelProvider(this).get(HomeViewModel::class.java) }
     private var mLastHomeClick: Long = 0
     private var mLastTicketClick: Long = 0
 
@@ -74,6 +82,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         else
             binding.tvLogout.visibility = View.VISIBLE
         binding.tvVersion.text = resources.getString(R.string.version) + " " + BuildConfig.VERSION_NAME
+        if(!SharedPreferencesManager.getBoolean(AppConstants.IS_FOR_ACTION)){
+            binding.tvUpgrade.visibility = View.VISIBLE
+            binding.tvUpgrade.setOnClickListener(this)
+        }
     }
 
     private fun setListeners() {
@@ -89,6 +101,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.tvEmail.setOnClickListener(this)
         binding.tvContact.setOnClickListener(this)
         binding.tvLocation.setOnClickListener(this)
+        binding.tvExhibition.setOnClickListener(this)
     }
 
     fun openDrawer()
@@ -199,6 +212,25 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 intent.putExtra(Intent.EXTRA_EMAIL, recipients)
                 intent.type = "text/html"
                 startActivity(Intent.createChooser(intent, resources.getString(R.string.send_email)))
+            }
+            binding.tvExhibition.id -> {
+                openBrowser("https://shail.katara.net/SignInUp3")
+            }
+            binding.tvUpgrade.id -> {
+                homeViewModel.requestAccountUpgrade(userId = SharedPreferencesManager.getString(AppConstants.USER_ID))
+            }
+        }
+    }
+
+    override fun onResponseSuccess(apiCode: Int) {
+        super.onResponseSuccess(apiCode)
+        when (apiCode) {
+            ApiCodes.REQUEST_ACCOUNT_UPGRADE -> {
+                val message: String = if(SharedPreferencesManager.getBoolean(AppConstants.IS_ARABIC))
+                    homeViewModel.upgradeResponseData.value!!.msgAr
+                else
+                    homeViewModel.upgradeResponseData.value!!.msgEn
+                showSnackBar(message)
             }
         }
     }

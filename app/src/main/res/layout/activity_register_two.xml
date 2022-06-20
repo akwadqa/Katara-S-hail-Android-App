@@ -73,6 +73,7 @@
                             android:src="@drawable/red_component" />
 
                         <TextView
+                            android:id="@+id/title_tv"
                             style="@style/bold"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -345,6 +346,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/q_id_copy_tv"
                             style="@style/bold"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

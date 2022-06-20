@@ -68,15 +68,15 @@
                     android:src="@drawable/red_component" />
 
                 <TextView
+                    android:id="@+id/title_tv"
+                    style="@style/bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/iv_component"
                     android:text="@string/new_bidder"
-                    style="@style/bold"
                     android:textColor="@color/text"
-                    android:textSize="@dimen/normal"
-                     />
+                    android:textSize="@dimen/normal" />
 
             </RelativeLayout>
 

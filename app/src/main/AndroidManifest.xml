@@ -20,11 +20,14 @@
         android:theme="@style/Theme.CoachApp">
         <activity
             android:name=".view.activities.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".view.activities.BaseActivity" />
         <activity
             android:name=".view.activities.SplashActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

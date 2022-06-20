@@ -15,11 +15,8 @@ import android.text.Spannable
 import android.text.style.ForegroundColorSpan
 import android.util.Base64
 import android.view.*
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.TextView
+import android.widget.*
 import android.widget.TextView.BufferType
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.app.R
@@ -36,6 +33,12 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 
 
+enum class RegistrationOptions {
+    QID,
+    PASSPORT,
+    NONE_QATARI
+}
+
 class
 RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
     private lateinit var registerTwoBinding: ActivityRegisterTwoBinding
@@ -45,7 +48,7 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
     private lateinit var otpview: OtpTextView
     private var otp: String? = ""
     private var isAuction: Boolean? = false
-    private var isPassport: Boolean? = false
+    private var registrationOptions: RegistrationOptions? = RegistrationOptions.PASSPORT
     private var moiError: String? = null
     private lateinit var tvNumber: TextView
     private lateinit var tvSubmit: TextView
@@ -63,7 +66,7 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
             moiError = intent.getStringExtra("moiError")
         }
         isAuction = intent.getBooleanExtra("isAuction", false)
-        isPassport = intent.getBooleanExtra("isPassport", false)
+        registrationOptions = intent.getSerializableExtra("registrationOptions") as RegistrationOptions?
         registerTwoViewModel.getIsdList()
         setData()
         setTermsConditions()
@@ -109,31 +112,47 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun setData() {
-        if(isPassport == true) {
-            setPassportView(View.VISIBLE)
-            setNationalityVisible()
-        }
-         else if (moiError == "true") {
-            qid = intent.getStringExtra("qid").toString()
-            setNationalityVisible()
-            setPassportView(View.GONE)
-        } else {
-            setPassportView(View.GONE)
-            registerTwoBinding.nameEt.isEnabled = false
-            registerTwoBinding.nameEt.background = getDrawable(R.color.box_color)
-            if (SharedPreferencesManager.getLanguageString(AppConstants.LANGUAGE) == "ar")
-                registerTwoBinding.nameEt.setText(dataModel.nameAr)
-            else
-                registerTwoBinding.nameEt.setText(dataModel.nameEn)
+        registrationOptions?.let {
+            when (it) {
+                RegistrationOptions.PASSPORT -> {
+                    setPassportView(View.VISIBLE)
+                    setNationalityVisible()
+                }
+                RegistrationOptions.QID -> {
+                    if (moiError == "true") {
+                        qid = intent.getStringExtra("qid").toString()
+                        setNationalityVisible()
+                        setPassportView(View.GONE)
+                    } else {
+                        setPassportView(View.GONE)
+                        registerTwoBinding.nameEt.isEnabled = false
+                        registerTwoBinding.nameEt.background = getDrawable(R.color.box_color)
+                        if (SharedPreferencesManager.getLanguageString(AppConstants.LANGUAGE) == "ar")
+                            registerTwoBinding.nameEt.setText(dataModel.nameAr)
+                        else
+                            registerTwoBinding.nameEt.setText(dataModel.nameEn)
 
-            registerTwoBinding.nationalityTv.visibility = View.GONE
-            registerTwoBinding.tvNationalityHeading.visibility = View.GONE
-            registerTwoBinding.spinnerNationality.visibility = View.GONE
+                        registerTwoBinding.nationalityTv.visibility = View.GONE
+                        registerTwoBinding.tvNationalityHeading.visibility = View.GONE
+                        registerTwoBinding.spinnerNationality.visibility = View.GONE
+                    }
+                }
+                RegistrationOptions.NONE_QATARI -> {
+                    setPassportView(View.VISIBLE)
+                    setNationalityVisible()
+                    registerTwoBinding.tvPassport.text = resources.getString(R.string.passport_or_id_no_s)
+                    registerTwoBinding.passportEt.hint = resources.getString(R.string.hint_passport_or_id_no_s)
+                    registerTwoBinding.qIdCopyTv.text = resources.getString(R.string.qatari_id_or_passport_copy)
+                }
+            }
         }
-        if (isAuction == true)
-            registerTwoBinding.linImage.visibility = View.VISIBLE
-        else
-            registerTwoBinding.linImage.visibility = View.GONE
+            if (isAuction == true)
+                registerTwoBinding.linImage.visibility = View.VISIBLE
+
+            else{
+                registerTwoBinding.linImage.visibility = View.GONE
+                registerTwoBinding.titleTv.text = resources.getString(R.string.registration)
+            }
     }
 
     private fun setNationalityData(nationalities: Array<out Any>) {
@@ -185,40 +204,50 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             registerTwoBinding.tvContinue.id -> {
-                if(isPassport == false) {
-                    registerTwoViewModel.dataModel = dataModel!!
-                    registerTwoViewModel.isAuction = isAuction!!
-                    registerTwoViewModel.number = registerTwoBinding.numberEt.text.toString()
-                    registerTwoViewModel.phoneCode = registerTwoBinding.tvIsd.text.toString()
-                    registerTwoViewModel.email = registerTwoBinding.emailEt.text.toString()
-                    registerTwoViewModel.switch = registerTwoBinding.swTc.isChecked
-                    if (moiError == "true") {
-                        registerTwoViewModel.nameAr = registerTwoBinding.nameEt.text.toString()
-                        registerTwoViewModel.name = registerTwoBinding.nameEt.text.toString()
-                        registerTwoViewModel.nationality = nationalityCode
-                        registerTwoViewModel.qID = qid
-                        registerTwoViewModel.nationalityName =
-                            registerTwoBinding.nationalityTv.text.toString()
-                    } else {
-                        registerTwoViewModel.nameAr = dataModel.nameAr.toString()
-                        registerTwoViewModel.name = dataModel.nameEn.toString()
-                        registerTwoViewModel.qID = dataModel.qid!!
+                registrationOptions?.let {
+                    when (it) {
+                        RegistrationOptions.QID -> {
+                            registerTwoViewModel.dataModel = dataModel!!
+                            registerTwoViewModel.isAuction = isAuction!!
+                            registerTwoViewModel.number = registerTwoBinding.numberEt.text.toString()
+                            registerTwoViewModel.phoneCode = registerTwoBinding.tvIsd.text.toString()
+                            registerTwoViewModel.email = registerTwoBinding.emailEt.text.toString()
+                            registerTwoViewModel.switch = registerTwoBinding.swTc.isChecked
+                            if (moiError == "true") {
+                                registerTwoViewModel.nameAr = registerTwoBinding.nameEt.text.toString()
+                                registerTwoViewModel.name = registerTwoBinding.nameEt.text.toString()
+                                registerTwoViewModel.nationality = nationalityCode
+                                registerTwoViewModel.qID = qid
+                                registerTwoViewModel.nationalityName =
+                                    registerTwoBinding.nationalityTv.text.toString()
+                            } else {
+                                registerTwoViewModel.nameAr = dataModel.nameAr.toString()
+                                registerTwoViewModel.name = dataModel.nameEn.toString()
+                                registerTwoViewModel.qID = dataModel.qid!!
+                            }
+                            registerTwoViewModel.validate(this, RegistrationOptions.QID)
+                        }
+                        else -> {
+                            registerTwoViewModel.isAuction = isAuction!!
+                            registerTwoViewModel.number = registerTwoBinding.numberEt.text.toString()
+                            registerTwoViewModel.phoneCode = registerTwoBinding.tvIsd.text.toString()
+                            registerTwoViewModel.email = registerTwoBinding.emailEt.text.toString()
+                            registerTwoViewModel.switch = registerTwoBinding.swTc.isChecked
+                            registerTwoViewModel.nameAr = registerTwoBinding.nameEt.text.toString()
+                            registerTwoViewModel.name = registerTwoBinding.nameEt.text.toString()
+                            registerTwoViewModel.nationality = nationalityCode
+                            registerTwoViewModel.qID = qid
+                            registerTwoViewModel.nationalityName =
+                                registerTwoBinding.nationalityTv.text.toString()
+                            registerTwoViewModel.qID = registerTwoBinding.passportEt.text.toString()
+                            if (isAuction == true) {
+                                registerTwoViewModel.validate(this, RegistrationOptions.NONE_QATARI)
+                            }
+                            else{
+                                registerTwoViewModel.validate(this, RegistrationOptions.PASSPORT)
+                            }
+                        }
                     }
-                    registerTwoViewModel.validate(this, true)
-                } else {
-                    registerTwoViewModel.isAuction = isAuction!!
-                    registerTwoViewModel.number = registerTwoBinding.numberEt.text.toString()
-                    registerTwoViewModel.phoneCode = registerTwoBinding.tvIsd.text.toString()
-                    registerTwoViewModel.email = registerTwoBinding.emailEt.text.toString()
-                    registerTwoViewModel.switch = registerTwoBinding.swTc.isChecked
-                    registerTwoViewModel.nameAr = registerTwoBinding.nameEt.text.toString()
-                    registerTwoViewModel.name = registerTwoBinding.nameEt.text.toString()
-                    registerTwoViewModel.nationality = nationalityCode
-                    registerTwoViewModel.qID = qid
-                    registerTwoViewModel.nationalityName =
-                        registerTwoBinding.nationalityTv.text.toString()
-                    registerTwoViewModel.qID = registerTwoBinding.passportEt.text.toString()
-                    registerTwoViewModel.validate(this, false)
                 }
             }
             registerTwoBinding.ivBack.id -> {
@@ -463,7 +492,7 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
     private fun verifyOtp() {
         if(registerTwoViewModel.otp==registerTwoViewModel.dataOTPMLD.value!!.responce || registerTwoViewModel.otp == "786123" ){
             if(moiError == "false") {
-                registerTwoViewModel.hitRegisterApi()
+                registrationOptions?.let { registerTwoViewModel.hitRegisterApi(it) }
             } else {
                 registerTwoViewModel.hitRegisterApiForUnknowUser()
             }

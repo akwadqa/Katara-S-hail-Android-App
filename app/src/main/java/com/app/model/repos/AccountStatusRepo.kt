@@ -13,5 +13,4 @@ class AccountStatusRepo : GenericApiRequest<Any>() {
             ApiManager.apiClient.hitRefreshUser(loginCredentials)
         }
     }
-
 }

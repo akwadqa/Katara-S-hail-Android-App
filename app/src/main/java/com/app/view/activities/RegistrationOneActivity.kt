@@ -35,6 +35,9 @@ class RegistrationOneActivity : BaseActivity(), View.OnClickListener {
         setObservers()
         isAuction = intent.getBooleanExtra("isAuction",false)
         isPassport = intent.getBooleanExtra("isPassport",false)
+        if(!isAuction!!) {
+            registerOneBinding.titleTv.text = resources.getString(R.string.registration)
+        }
     }
 
     private fun setListeners() {

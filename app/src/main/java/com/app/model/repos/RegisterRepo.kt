@@ -43,6 +43,12 @@ class RegisterRepo : GenericApiRequest<Any>() {
         }
     }
 
+    suspend fun hitRegisterApiForNoneQatariUser( loginCredentials: RegisterParamModel) : Any? {
+        return apiRequest {
+            ApiManager.apiClient.hitRegisterApiForNoneQatariUser(loginCredentials)
+        }
+    }
+
     suspend fun getIsdList(): Any?{
         return apiRequest {
             ApiManager.apiClient.getIsdList()
@@ -73,7 +79,4 @@ class RegisterRepo : GenericApiRequest<Any>() {
             ApiManager.apiUpdateClient.checkForceUpdate()
         }
     }
-
-
-
 }

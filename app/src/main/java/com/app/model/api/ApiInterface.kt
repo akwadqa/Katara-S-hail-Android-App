@@ -41,6 +41,14 @@ interface ApiInterface {
     @POST(ApiEndPoints.REGISTER_TICKET_USER)
     suspend fun hitRegisterApiForTicketUser(@Body userData: RegisterParamModel): Response<Any>
 
+    @Headers("Content-Type: application/json")
+    @POST(ApiEndPoints.REGISTER_NONE_QATARI_USER)
+    suspend fun hitRegisterApiForNoneQatariUser(@Body userData: RegisterParamModel): Response<Any>
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiEndPoints.REQUEST_ACCOUNT_UPGRADE)
+    suspend fun requestAccountUpgrade(@Body params: AccountStatusParamModel): Response<Any>
+
     @GET(ApiEndPoints.GET_NEWS)
     suspend fun getNewsApi(): Response<Any>
 
@@ -110,5 +118,6 @@ interface ApiInterface {
     @GET(ApiEndPoints.GET_COUNTRIES)
     suspend fun getNationalityList(): Response<Any>
 
-
+    @GET(ApiEndPoints.GET_AUCTION_IS_FOR_QATARI)
+    suspend fun getAuctionIsForQatar(): Response<Any>
 }

@@ -1,19 +1,15 @@
 package com.app.view.activities
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import com.app.R
 import com.app.databinding.ActivityOptionBinding
-import com.app.utils.ApiCodes
 import com.app.utils.AppConstants
 import com.app.utils.SharedPreferencesManager
-import com.app.viewmodel.OtherViewModel
 import java.util.*
 
 class OptionActivity : BaseActivity(), View.OnClickListener {
@@ -32,6 +28,7 @@ class OptionActivity : BaseActivity(), View.OnClickListener {
         optionBinding.tvProceed.setOnClickListener(this)
         optionBinding.tvAr.setOnClickListener(this)
         optionBinding.tvEn.setOnClickListener(this)
+        optionBinding.tvExhibitor.setOnClickListener(this)
     }
 
 
@@ -61,6 +58,10 @@ class OptionActivity : BaseActivity(), View.OnClickListener {
                 optionBinding.tvEn.setTextColor(resources.getColor(R.color.white))
                 optionBinding.tvEn.background = null
                 setLanguage("ar")
+            }
+            optionBinding.tvExhibitor.id -> {
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://shail.katara.net/SignInUp3"))
+                startActivity(browserIntent)
             }
         }
     }

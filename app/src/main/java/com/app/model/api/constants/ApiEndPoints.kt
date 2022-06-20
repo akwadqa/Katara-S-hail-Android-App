@@ -9,6 +9,7 @@ object ApiEndPoints {
     const val REGISTER = "Member/AddUser"
     const val REGISTER_UNKNOWN_USER = "Member/AddUser1"
     const val REGISTER_TICKET_USER = "Member/AddUser2"
+    const val REGISTER_NONE_QATARI_USER = "Member/AddUser3"
     const val GET_TICKET = "Ticket/GetUserTickets"
     const val GET_TICKET_CONFIG = "Ticket/GetTicketConfig"
     const val GET_TICKET_DATA = "Ticket/GetBookingDatesAtimeSlots"
@@ -32,5 +33,7 @@ object ApiEndPoints {
     const val SHOP_DETAILS = "Shop/GetShopDetails"
     const val GET_ISD = "Utility/GetIsd"
     const val GET_COUNTRIES= "Utility/GetContry"
+    const val GET_AUCTION_IS_FOR_QATARI= "Utility/AuctionIsForQatari"
+    const val REQUEST_ACCOUNT_UPGRADE= "Member/RequesttAccountUpgrade"
 
 }

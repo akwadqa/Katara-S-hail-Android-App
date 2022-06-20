@@ -32,9 +32,11 @@
 
     <string name="sign_in">تسجيل الدخول</string>
 
-    <string name="new_auction">مزايد جديد</string>
+    <string name="new_auction">مزاد جديد</string>
 
-    <string name="new_bidder">التسجيل</string>
+    <string name="new_bidder">مزايد جديد</string>
+
+    <string name="registration">تسجيل</string>
 
     <string name="s_continue">استمر</string>
 
@@ -212,7 +214,9 @@
     <string name="full_name_s">الاسم بالكامل</string>
 
     <string name="passport_no_s">رقم الجواز</string>
+    <string name="passport_or_id_no_s">رقم الجواز أو رقم البطاقة الشخصية</string>
     <string name="hint_passport_no_s">ادخل رقم الجواز</string>
+    <string name="hint_passport_or_id_no_s">ادخل رقم الجواز أو رقم البطاقة الشخصية</string>
     <string name="hint_full_name_s">ادخل الاسم الكامل</string>
     <string name="hint_email_s">اختياري</string>
 
@@ -225,11 +229,21 @@
 
     <string name="qatari_id_copy">صورة البطاقة الشخصية</string>
 
+    <string name="qatari_id_or_passport_copy">صورة البطاقة الشخصية أو جواز السفر</string>
+
     <string name="confirm">تأكيد</string>
 
     <string name="description">الوصف</string>
 
+    <string name="qatari">قطري</string>
 
+    <string name="none_qatari">غير قطري</string>
+
+    <string name="exhibitor">عارض</string>
+
+    <string name="exhibition">المعرض</string>
+
+    <string name="upgrade">ترقية</string>
 
     <string name="title_activity_main3">MainActivity3</string>
 

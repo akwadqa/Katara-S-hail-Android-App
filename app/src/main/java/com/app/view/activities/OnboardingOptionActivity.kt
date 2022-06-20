@@ -13,20 +13,27 @@ import androidx.databinding.DataBindingUtil
 import com.app.R
 import com.app.databinding.ActivityOnboardingOptionBinding
 import com.app.utils.SharedPreferencesManager
+import com.app.viewmodel.OtherViewModel
 
 class OnboardingOptionActivity : BaseActivity(), View.OnClickListener {
     private lateinit var onboardingOptionBinding: ActivityOnboardingOptionBinding
+    private lateinit var otherViewModel: OtherViewModel
     private var isAuction: Boolean ? = false
     private lateinit var dialog : Dialog
     private lateinit var tvCancel:TextView
-    private lateinit var tvPassport:TextView
-    private lateinit var tvQid:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         onboardingOptionBinding = DataBindingUtil.setContentView(this, R.layout.activity_onboarding_option)
         setListeners()
         isAuction = intent.getBooleanExtra("isAuction",false)
+        if(!isAuction!!)
+        {
+            onboardingOptionBinding.tvRegister.text = resources.getString(R.string.registration)
+        }else{
+            otherViewModel = OtherViewModel()
+            otherViewModel.getAuctionIsForQatari()
+        }
     }
 
     private fun setListeners() {
@@ -41,7 +48,9 @@ class OnboardingOptionActivity : BaseActivity(), View.OnClickListener {
             }
             onboardingOptionBinding.tvRegister.id -> {
                 if(isAuction == true) {
-                    startActivity(Intent(this, RegistrationOneActivity::class.java).putExtra("isAuction",isAuction))
+                    if(otherViewModel.auctionIsForQatariData.value?.response == true){
+                        showNewBidderPicker()
+                    }
                 } else {
                     showRegistrationPicker()
                 }
@@ -56,7 +65,7 @@ class OnboardingOptionActivity : BaseActivity(), View.OnClickListener {
             super.onBackPressed()
     }
 
-    private fun showRegistrationPicker(){
+    private fun getDialog() : Dialog {
         dialog = Dialog(this,android.R.style.Theme_Light)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
@@ -69,18 +78,45 @@ class OnboardingOptionActivity : BaseActivity(), View.OnClickListener {
         dialog.window!!.setSoftInputMode(
             WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         dialog.setContentView(R.layout.ticket_registration_popup)
-        tvPassport = dialog.findViewById(R.id.btn_passport) as TextView
-        tvQid = dialog.findViewById(R.id.btn_qid) as TextView
+        return dialog
+    }
+
+    private fun showRegistrationPicker(){
+        dialog = getDialog()
+        val tvPassport:TextView = dialog.findViewById(R.id.btn_passport) as TextView
+        val tvQid:TextView = dialog.findViewById(R.id.btn_qid) as TextView
         tvCancel = dialog.findViewById(R.id.btnCancelDialog) as TextView
         tvPassport.setOnClickListener {
             dialog.dismiss()
             startActivity(Intent(this, RegistrationTwoActivity::class.java).putExtra("isAuction",isAuction)
-                .putExtra("isPassport", true))
+                .putExtra("registrationOptions", RegistrationOptions.PASSPORT))
         }
         tvQid.setOnClickListener {
             dialog.dismiss()
             startActivity(Intent(this, RegistrationOneActivity::class.java).putExtra("isAuction",isAuction)
-                .putExtra("isPassport", false))
+                .putExtra("registrationOptions", RegistrationOptions.QID))
+        }
+        tvCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    private fun showNewBidderPicker(){
+        dialog = getDialog()
+        val tvQatari:TextView = dialog.findViewById(R.id.btn_passport) as TextView
+        tvQatari.text = resources.getString(R.string.qatari)
+        val tvNoneQatari:TextView = dialog.findViewById(R.id.btn_qid) as TextView
+        tvNoneQatari.text = resources.getString(R.string.none_qatari)
+        tvCancel = dialog.findViewById(R.id.btnCancelDialog) as TextView
+        tvQatari.setOnClickListener {
+            dialog.dismiss()
+            startActivity(Intent(this, RegistrationOneActivity::class.java).putExtra("isAuction",isAuction))
+        }
+        tvNoneQatari.setOnClickListener {
+            dialog.dismiss()
+            startActivity(Intent(this, RegistrationTwoActivity::class.java).putExtra("isAuction",isAuction)
+                .putExtra("registrationOptions", RegistrationOptions.NONE_QATARI))
         }
         tvCancel.setOnClickListener {
             dialog.dismiss()

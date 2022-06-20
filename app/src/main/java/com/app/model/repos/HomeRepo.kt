@@ -2,6 +2,7 @@ package com.app.model.repos
 
 import com.app.model.api.ApiManager
 import com.app.model.api.GenericApiRequest
+import com.app.model.dataclasses.AccountStatusParamModel
 
 
 class HomeRepo : GenericApiRequest<Any>() {
@@ -30,6 +31,10 @@ class HomeRepo : GenericApiRequest<Any>() {
         }
     }
 
-
+    suspend fun requestAccountUpgrade(userId: String) : Any? {
+        return apiRequest {
+            ApiManager.apiClient.requestAccountUpgrade(AccountStatusParamModel(key = userId, value = "upgrade"))
+        }
+    }
 
 }

@@ -9,6 +9,7 @@ import com.app.model.api.API_VIEWMODEL_DATA
 import com.app.model.dataclasses.*
 import com.app.model.repos.RegisterRepo
 import com.app.utils.*
+import com.app.view.activities.RegistrationOptions
 import com.google.gson.Gson
 
 class RegisterTwoViewModel : BaseViewModel(), Observable {
@@ -54,7 +55,7 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
 
     var dataModel: QIDExtractDataModel = QIDExtractDataModel()
 
-    fun validate(context : Context, isNotPassport: Boolean) {
+    fun validate(context : Context, registrationOptions: RegistrationOptions) {
         if (name.isBlank()) {
             mValidationLiveData.value = DataValidation(
                 context.getString(R.string.enter_name),
@@ -84,10 +85,15 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
                 false
             )
         }else {
-            if(isNotPassport){
-                sendOTP()
-            } else {
-                checkIdExist()
+            registrationOptions.let {
+                when(it) {
+                    RegistrationOptions.QID -> {
+                        checkIdExist()
+                    }
+                    else -> {
+                        sendOTP()
+                    }
+                }
             }
         }
     }
@@ -119,7 +125,7 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
 
 
 
-    fun hitRegisterApi() {
+    fun hitRegisterApi(registrationOptions: RegistrationOptions) {
         if(isAuction) {
             val registerImageParamModel = RegisterImageParamModel(
                 docPhotoFileContent = "",
@@ -141,10 +147,12 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
                 birthDate = dataModel.birthDatDate,
                 userDocCollection = registerImageParamModel,
             )
-
             CoroutinesBase.main {
                 setLoadingState(LoadingState.LOADING())
-                val loginResponse = registerRepo.hitRegisterApi(registerParamModel)
+                var loginResponse = registerRepo.hitRegisterApi(registerParamModel)
+                if(registrationOptions == RegistrationOptions.NONE_QATARI){
+                    loginResponse = registerRepo.hitRegisterApiForNoneQatariUser(registerParamModel)
+                }
                 updateView(ApiCodes.REGISTER,loginResponse) {
                     when(it) {
                         is API_VIEWMODEL_DATA.API_SUCCEED -> {
