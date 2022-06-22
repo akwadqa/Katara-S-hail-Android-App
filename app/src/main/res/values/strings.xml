@@ -244,9 +244,7 @@
 
     <string name="exhibitor">Exhibitor</string>
 
-    <string name="exhibition">Exhibition</string>
-
-    <string name="upgrade">Upgrade</string>
+    <string name="upgrade">Upgrade To New Bidder</string>
 
     <string name="title_activity_main3">MainActivity3</string>
     <string name="menu_gallery">Gallery</string>

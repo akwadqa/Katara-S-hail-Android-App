@@ -49,6 +49,9 @@ class OnboardingOptionActivity : BaseActivity(), View.OnClickListener {
             onboardingOptionBinding.tvRegister.id -> {
                 if(isAuction == true) {
                     if(otherViewModel.auctionIsForQatariData.value?.response == true){
+                        startActivity(Intent(this, RegistrationOneActivity::class.java).putExtra("isAuction",isAuction))
+                    }
+                    else{
                         showNewBidderPicker()
                     }
                 } else {

@@ -39,6 +39,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setListeners()
+        setObservers()
         setData()
         val isFrom = intent.getBooleanExtra("fromAccount",false)
         if(isFrom) {
@@ -52,6 +53,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 else -> binding.tvHome.performClick()
             }
         }
+    }
+
+    private fun setObservers() {
+        homeViewModel.getResponseObserver().observe(this, this)
     }
 
     private fun setData() {
@@ -230,7 +235,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     homeViewModel.upgradeResponseData.value!!.msgAr
                 else
                     homeViewModel.upgradeResponseData.value!!.msgEn
-                showSnackBar(message)
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             }
         }
     }
