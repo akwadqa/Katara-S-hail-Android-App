@@ -95,6 +95,7 @@ class RegistrationOneActivity : BaseActivity(), View.OnClickListener {
                        intent.putExtra("qid", registerOneBinding.numberEt.text.toString())
                    }
                    intent.putExtra("isPassport", isPassport)
+                   intent.putExtra("registrationOptions", RegistrationOptions.QID)
                    intent.putExtra("isAuction",isAuction)
                    setLocaleTemp(SharedPreferencesManager.getLanguageString(AppConstants.LANGUAGE))
                    startActivity(intent)

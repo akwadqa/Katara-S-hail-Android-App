@@ -52,7 +52,7 @@ class OnboardingOptionActivity : BaseActivity(), View.OnClickListener {
                         startActivity(Intent(this, RegistrationOneActivity::class.java).putExtra("isAuction",isAuction))
                     }
                     else{
-                        showNewBidderPicker()
+                        startActivity(Intent(this, NewBidderOptionsActivity::class.java))
                     }
                 } else {
                     showRegistrationPicker()
@@ -104,27 +104,4 @@ class OnboardingOptionActivity : BaseActivity(), View.OnClickListener {
         }
         dialog.show()
     }
-
-    private fun showNewBidderPicker(){
-        dialog = getDialog()
-        val tvQatari:TextView = dialog.findViewById(R.id.btn_passport) as TextView
-        tvQatari.text = resources.getString(R.string.qatari)
-        val tvNoneQatari:TextView = dialog.findViewById(R.id.btn_qid) as TextView
-        tvNoneQatari.text = resources.getString(R.string.none_qatari)
-        tvCancel = dialog.findViewById(R.id.btnCancelDialog) as TextView
-        tvQatari.setOnClickListener {
-            dialog.dismiss()
-            startActivity(Intent(this, RegistrationOneActivity::class.java).putExtra("isAuction",isAuction))
-        }
-        tvNoneQatari.setOnClickListener {
-            dialog.dismiss()
-            startActivity(Intent(this, RegistrationTwoActivity::class.java).putExtra("isAuction",isAuction)
-                .putExtra("registrationOptions", RegistrationOptions.NONE_QATARI))
-        }
-        tvCancel.setOnClickListener {
-            dialog.dismiss()
-        }
-        dialog.show()
-    }
-
 }

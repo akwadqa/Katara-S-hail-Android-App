@@ -67,13 +67,13 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
                 context.getString(R.string.enter_number),
                 false
             )
-        }else if (isAuction && frontImage.isBlank()) {
+        }else if (frontImage.isBlank()) {
             mValidationLiveData.value = DataValidation(
                 context.getString(R.string.select_front),
                 false
             )
         }
-        else if (isAuction && backImage.isBlank()) {
+        else if (backImage.isBlank()) {
             mValidationLiveData.value = DataValidation(
                 context.getString(R.string.select_back),
                 false
@@ -125,16 +125,15 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
 
 
 
-    fun hitRegisterApi(registrationOptions: RegistrationOptions) {
+    fun hitRegisterApi() {
+        val registerImageParamModel = RegisterImageParamModel(
+            docPhotoFileContent = "",
+            docQid1 = "qid1",
+            docQid1FileContent = frontImage,
+            docQid2 = "qid2",
+            docQid2FileContent = backImage,
+        )
         if(isAuction) {
-            val registerImageParamModel = RegisterImageParamModel(
-                docPhotoFileContent = "",
-                docQid1 = "qid1",
-                docQid1FileContent = frontImage,
-                docQid2 = "qid2",
-                docQid2FileContent = backImage,
-            )
-
             val registerParamModel = RegisterParamModel(
                 userQid = dataModel.qid,
                 userNationalityCode = dataModel.nationalityCode.toString(),
@@ -149,10 +148,7 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
             )
             CoroutinesBase.main {
                 setLoadingState(LoadingState.LOADING())
-                var loginResponse = registerRepo.hitRegisterApi(registerParamModel)
-                if(registrationOptions == RegistrationOptions.NONE_QATARI){
-                    loginResponse = registerRepo.hitRegisterApiForNoneQatariUser(registerParamModel)
-                }
+                val loginResponse = registerRepo.hitRegisterApi(registerParamModel)
                 updateView(ApiCodes.REGISTER,loginResponse) {
                     when(it) {
                         is API_VIEWMODEL_DATA.API_SUCCEED -> {
@@ -188,6 +184,7 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
                 userType = 0,
                 phoneCode = phoneCode,
                 birthDate = dataModel.birthDatDate,
+                userDocCollection = registerImageParamModel,
             )
 
             CoroutinesBase.main {
@@ -219,16 +216,16 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
 
     }
 
-    fun hitRegisterApiForUnknowUser(){
-        if(isAuction) {
-            val registerImageParamModel = RegisterImageParamModel(
-                docPhotoFileContent = "",
-                docQid1 = "qid1",
-                docQid1FileContent = frontImage,
-                docQid2 = "qid2",
-                docQid2FileContent = backImage,
-            )
+    fun hitRegisterApiForUnknowUser(registrationOptions: RegistrationOptions){
+        val registerImageParamModel = RegisterImageParamModel(
+            docPhotoFileContent = "",
+            docQid1 = "qid1",
+            docQid1FileContent = frontImage,
+            docQid2 = "qid2",
+            docQid2FileContent = backImage,
+        )
 
+        if(isAuction) {
             val registerParamModel = RegisterParamModel(
                 userQid = qID,
                 userNationalityCode = nationality,
@@ -244,7 +241,7 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
 
             CoroutinesBase.main {
                 setLoadingState(LoadingState.LOADING())
-                val loginResponse = registerRepo.hitRegisterApiForUnknowUser(registerParamModel)
+                val loginResponse = if(registrationOptions == RegistrationOptions.NONE_QATARI) registerRepo.hitRegisterApiForNoneQatariUser(registerParamModel) else{registerRepo.hitRegisterApiForUnknowUser(registerParamModel)}
                 updateView(ApiCodes.REGISTER,loginResponse) {
                     when(it) {
                         is API_VIEWMODEL_DATA.API_SUCCEED -> {
@@ -281,6 +278,7 @@ class RegisterTwoViewModel : BaseViewModel(), Observable {
                 userType = 0,
                 phoneCode = phoneCode,
                 birthDate = dataModel.birthDatDate,
+                userDocCollection = registerImageParamModel,
             )
 
             CoroutinesBase.main {

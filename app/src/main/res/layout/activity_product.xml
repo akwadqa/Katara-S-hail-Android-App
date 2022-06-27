@@ -134,27 +134,6 @@
             />
 
 
-
-        <TextView
-            android:id="@+id/tv_vendor"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/_25sdp"
-            android:layout_marginEnd="@dimen/_25sdp"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:background="@drawable/brown_rounded"
-            android:gravity="center"
-            android:text="@string/contact_vendor"
-            style="@style/bold"
-            android:textColor="@color/white"
-            android:textSize="@dimen/normal"
-            />
-
-
-
     </LinearLayout>
 
 </RelativeLayout>

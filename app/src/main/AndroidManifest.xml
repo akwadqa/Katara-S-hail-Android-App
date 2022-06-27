@@ -44,6 +44,9 @@
             android:name=".view.activities.OnboardingOptionActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".view.activities.NewBidderOptionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".view.activities.SignInActivity"
             android:screenOrientation="portrait" />
         <activity

@@ -115,9 +115,9 @@
 
     <string name="enter_visit_date">Please Enter Visit Date</string>
 
-    <string name="select_front">Please upload a photo of your QID - front side</string>
+    <string name="select_front">Please upload a photo of your ID or Passport - front side</string>
 
-    <string name="select_back">Please upload a photo of your QID - back side</string>
+    <string name="select_back">Please upload a photo of your ID or Passport - back side</string>
 
     <string name="select_switch">Please Accept The Terms and Conditions</string>
 
@@ -232,15 +232,15 @@
 
     <string name="qatari_id_copy">Qatari ID Copy</string>
 
-    <string name="qatari_id_or_passport_copy">Qatari ID Or Passport Copy</string>
+    <string name="id_or_passport_copy">ID Or Passport Copy</string>
 
     <string name="confirm">Confirm</string>
 
     <string name="description">Description</string>
 
-    <string name="qatari">Qatari</string>
+    <string name="qatari_or_resident">Qatari or Resident</string>
 
-    <string name="none_qatari">None-Qatari</string>
+    <string name="other">Other</string>
 
     <string name="exhibitor">Exhibitor</string>
 
@@ -299,7 +299,6 @@
     <string name="exhibitors">Exhibitors</string>
     <string name="exhibitor_products">Exhibitor products</string>
     <string name="product_details">Product details</string>
-    <string name="contact_vendor">Contact vendor</string>
     <string name="contact_phone">Contact phone</string>
     <string name="send_email">Send email</string>
 

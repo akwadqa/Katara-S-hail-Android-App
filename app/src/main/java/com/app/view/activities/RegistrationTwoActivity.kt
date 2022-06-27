@@ -14,6 +14,7 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.style.ForegroundColorSpan
 import android.util.Base64
+import android.util.Log
 import android.view.*
 import android.widget.*
 import android.widget.TextView.BufferType
@@ -139,10 +140,12 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
                 }
                 RegistrationOptions.NONE_QATARI -> {
                     setPassportView(View.VISIBLE)
-                    setNationalityVisible()
+                    registerTwoBinding.nationalityTv.visibility = View.GONE
+                    registerTwoBinding.tvNationalityHeading.visibility = View.GONE
+                    registerTwoBinding.spinnerNationality.visibility = View.GONE
                     registerTwoBinding.tvPassport.text = resources.getString(R.string.passport_or_id_no_s)
                     registerTwoBinding.passportEt.hint = resources.getString(R.string.hint_passport_or_id_no_s)
-                    registerTwoBinding.qIdCopyTv.text = resources.getString(R.string.qatari_id_or_passport_copy)
+                    registerTwoBinding.qIdCopyTv.text = resources.getString(R.string.id_or_passport_copy)
                 }
             }
         }
@@ -150,8 +153,9 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
                 registerTwoBinding.linImage.visibility = View.VISIBLE
 
             else{
-                registerTwoBinding.linImage.visibility = View.GONE
                 registerTwoBinding.titleTv.text = resources.getString(R.string.registration)
+                registerTwoBinding.linImage.visibility = View.VISIBLE
+                registerTwoBinding.qIdCopyTv.text = resources.getString(R.string.id_or_passport_copy)
             }
     }
 
@@ -492,9 +496,9 @@ RegistrationTwoActivity : BaseActivity(), View.OnClickListener {
     private fun verifyOtp() {
         if(registerTwoViewModel.otp==registerTwoViewModel.dataOTPMLD.value!!.responce || registerTwoViewModel.otp == "786123" ){
             if(moiError == "false") {
-                registrationOptions?.let { registerTwoViewModel.hitRegisterApi(it) }
+                registerTwoViewModel.hitRegisterApi()
             } else {
-                registerTwoViewModel.hitRegisterApiForUnknowUser()
+                registerTwoViewModel.hitRegisterApiForUnknowUser(registrationOptions!!)
             }
         }
         else {

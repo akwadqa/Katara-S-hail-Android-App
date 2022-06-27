@@ -46,7 +46,6 @@ class ProductActivity : BaseActivity(), View.OnClickListener {
 
     private fun setListeners() {
         binding.ivBack.setOnClickListener(this)
-        binding.tvVendor.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -54,47 +53,7 @@ class ProductActivity : BaseActivity(), View.OnClickListener {
             binding.ivBack.id -> {
                 finish()
             }
-            binding.tvVendor.id -> {
-                showContactDialog()
-            }
         }
-    }
-
-    private fun showContactDialog() {
-        dialog = Dialog(this,R.style.yourCustomDialog)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setCancelable(true)
-        dialog.setCanceledOnTouchOutside(true)
-        dialog.window!!
-            .setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        dialog.window!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.semi_transparent)))
-        dialog.window!!.setGravity(Gravity.BOTTOM)
-        dialog.setContentView(R.layout.dialog_vendor)
-        val tvPhone = dialog.findViewById(R.id.tv_phone) as TextView
-        val tvEmail = dialog.findViewById(R.id.tv_email) as TextView
-        tvPhone.setOnClickListener {
-            val callIntent = Intent(Intent.ACTION_DIAL)
-            callIntent.data = Uri.parse("tel:" + dataModel.shop!!.shopPhone) //change the number
-            startActivity(callIntent)
-            dialog.dismiss()
-        }
-        tvEmail.setOnClickListener {
-            val intent = Intent(Intent.ACTION_SEND)
-            val recipients = arrayOf(dataModel.shop!!.shopEmail)
-            intent.putExtra(Intent.EXTRA_EMAIL, recipients)
-            intent.type = "text/html"
-            startActivity(Intent.createChooser(intent, resources.getString(R.string.send_email)))
-            dialog.dismiss()
-        }
-        dialog.show()
-
-        dialog.setOnKeyListener(DialogInterface.OnKeyListener { dialogInterface, keyCode, keyEvent ->
-            if (keyCode == KeyEvent.KEYCODE_BACK && keyEvent.action === KeyEvent.ACTION_UP) {
-                onBackPressed()
-                return@OnKeyListener true
-            }
-            false
-        })
     }
 
     override fun onBackPressed() {

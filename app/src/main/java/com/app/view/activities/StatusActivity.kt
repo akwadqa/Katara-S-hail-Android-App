@@ -11,6 +11,7 @@ import com.app.R
 import com.app.databinding.ActivityStatusBinding
 import com.app.utils.ApiCodes
 import com.app.utils.AppConstants
+import com.app.utils.AppUtils
 import com.app.utils.SharedPreferencesManager
 import com.app.viewmodel.AccountStatusViewModel
 
@@ -52,6 +53,9 @@ class StatusActivity : BaseActivity(), View.OnClickListener {
                 finish()
             }
             statusBinding.tvPay.id -> {
+                val link = SharedPreferencesManager.getString(AppConstants.PAY_LINK);
+                AppUtils.logout(this)
+                SharedPreferencesManager.put(AppConstants.PAY_LINK, link)
                 val intent = Intent(this, PaymentActivity::class.java)
                 resultLauncher.launch(intent)
             }

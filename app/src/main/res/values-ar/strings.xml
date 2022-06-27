@@ -115,9 +115,9 @@
 
     <string name="enter_visit_date">يرجى ادخال تاريخ الزيارة</string>
 
-    <string name="select_front">يرجى ارفاق صورة من البطاقة الشخصية - الوجه الأمامي</string>
+    <string name="select_front">يرجى ارفاق صورة من البطاقة الشخصية أو جواز السفر - الوجه الأمامي</string>
 
-    <string name="select_back">يرجى ارفاق صورة من البطاقة الشخصية - الوجه الخلفي</string>
+    <string name="select_back">يرجى ارفاق صورة من البطاقة الشخصية أو جواز السفر - الوجه الخلفي</string>
 
     <string name="select_switch">يرجى الموافقة على الشروط والأحكام</string>
 
@@ -229,15 +229,15 @@
 
     <string name="qatari_id_copy">صورة البطاقة الشخصية</string>
 
-    <string name="qatari_id_or_passport_copy">صورة البطاقة الشخصية أو جواز السفر</string>
+    <string name="id_or_passport_copy">صورة البطاقة الشخصية أو جواز السفر</string>
 
     <string name="confirm">تأكيد</string>
 
     <string name="description">الوصف</string>
 
-    <string name="qatari">قطري</string>
+    <string name="qatari_or_resident">قطري أو مقيم</string>
 
-    <string name="none_qatari">غير قطري</string>
+    <string name="other">غير ذلك</string>
 
     <string name="exhibitor">عارض</string>
 
@@ -296,7 +296,6 @@
     <string name="exhibitors">العارضين</string>
     <string name="exhibitor_products">منتجات العارض</string>
     <string name="product_details">تفاصيل المنتج</string>
-    <string name="contact_vendor">تواصل مع العارض</string>
     <string name="contact_phone">اتصال هاتفي</string>
     <string name="send_email">بريد الكتروني</string>
     <string name="register_by_passport">التسجيل برقم الجواز</string>

@@ -80,7 +80,9 @@ object AppUtils {
 
     fun logout(context: Activity)
     {
+        val languageToLoad = SharedPreferencesManager.getLanguageString(AppConstants.LANGUAGE)
         SharedPreferencesManager.clearAllPreferences(context)
+        SharedPreferencesManager.put(AppConstants.LANGUAGE,languageToLoad)
         val intent = Intent(context, SplashActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         context.startActivity(intent)

@@ -6,14 +6,17 @@
         <entry key="app/src/main/res/layout/activity_auction_list.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.19519927536231885" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_new_bidder_options.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_onboarding_option.xml" value="0.36172606556128095" />
         <entry key="app/src/main/res/layout/activity_option.xml" value="0.31628387008888137" />
         <entry key="app/src/main/res/layout/activity_product.xml" value="0.20965423583984377" />
         <entry key="app/src/main/res/layout/activity_register_one.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register_two.xml" value="0.4128326416015625" />
+        <entry key="app/src/main/res/layout/activity_status.xml" value="0.1" />
         <entry key="app/src/main/res/layout/component_top.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_product.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_status.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_ud.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/row_products.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/row_slot.xml" value="0.15070921985815602" />

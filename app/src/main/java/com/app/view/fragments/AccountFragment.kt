@@ -21,12 +21,14 @@ import com.app.databinding.FragmentTicketBinding
 import com.app.model.dataclasses.TicketListResponse
 import com.app.utils.ApiCodes
 import com.app.utils.AppConstants
+import com.app.utils.AppUtils
 import com.app.utils.SharedPreferencesManager
 import com.app.view.activities.*
 import com.app.view.adaptors.TicketsAdapter
 import com.app.viewmodel.AccountStatusViewModel
 import com.app.viewmodel.OtherViewModel
 import com.app.viewmodel.TicketViewModel
+import kotlinx.coroutines.awaitAll
 import java.util.*
 
 
@@ -77,6 +79,9 @@ class AccountFragment : BaseFragment() , View.OnClickListener  {
                 (activity as MainActivity).openLogoutDialog()
             }
             statusBinding.tvPay.id -> {
+                val link = SharedPreferencesManager.getString(AppConstants.PAY_LINK);
+                AppUtils.logout(requireActivity())
+                SharedPreferencesManager.put(AppConstants.PAY_LINK, link)
                 val intent = Intent(this@AccountFragment.activity, PaymentActivity::class.java)
                 resultLauncher.launch(intent)
             }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.activities.SplashActivity"
+        android:background="@drawable/background_two">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_60sdp"
+            android:paddingTop="@dimen/_50sdp"
+            android:paddingRight="@dimen/_60sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/white_logo" />
+
+            <TextView
+                android:id="@+id/tv_qatari"
+                style="@style/bold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:background="@drawable/white_rounded"
+                android:gravity="center"
+                android:text="@string/qatari_or_resident"
+
+                android:textColor="@color/primary"
+                android:textSize="@dimen/normal" />
+
+            <TextView
+                android:id="@+id/tv_none_qatari"
+                style="@style/bold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/white_rounded"
+                android:gravity="center"
+                android:text="@string/other"
+
+                android:textColor="@color/primary"
+                android:textSize="@dimen/normal" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>>
+
+</layout>
