@@ -7,6 +7,7 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.GravityCompat
@@ -107,6 +108,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.tvContact.setOnClickListener(this)
         binding.tvLocation.setOnClickListener(this)
         binding.tvExhibition.setOnClickListener(this)
+        binding.tvDelete.setOnClickListener(this)
     }
 
     fun openDrawer()
@@ -224,6 +226,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             binding.tvUpgrade.id -> {
                 homeViewModel.requestAccountUpgrade(userId = SharedPreferencesManager.getString(AppConstants.USER_ID))
             }
+            binding.tvDelete.id -> {
+                homeViewModel.requestDeleteAccount(userId = SharedPreferencesManager.getString(AppConstants.USER_ID))
+            }
         }
     }
 
@@ -235,6 +240,22 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     homeViewModel.upgradeResponseData.value!!.msgAr
                 else
                     homeViewModel.upgradeResponseData.value!!.msgEn
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            }
+            ApiCodes.REQUEST_DELETE_ACCOUNT -> {
+                if(homeViewModel.deleteResponseData.value!!.response){
+                    val languageToLoad = SharedPreferencesManager.getLanguageString(AppConstants.LANGUAGE)
+                    SharedPreferencesManager.clearAllPreferences(this)
+                    SharedPreferencesManager.put(AppConstants.LANGUAGE,languageToLoad)
+                    val intent = Intent(this, SplashActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                }
+                val message: String = if(SharedPreferencesManager.getBoolean(AppConstants.IS_ARABIC))
+                    homeViewModel.deleteResponseData.value!!.msgAr
+                else
+                    homeViewModel.deleteResponseData.value!!.msgEn
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             }
         }

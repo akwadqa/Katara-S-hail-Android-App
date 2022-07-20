@@ -16,6 +16,7 @@ class HomeViewModel : BaseViewModel(), Observable {
     val dataFalconCategoryMLD = MutableLiveData<FalconCategoryMainResponse?>()
     val dataFalconMLD = MutableLiveData<FalconMainResponse?>()
     val upgradeResponseData = MutableLiveData<GeneralResponseModel?>()
+    val deleteResponseData = MutableLiveData<GeneralResponseModel?>()
 
     var msg: String = ""
 
@@ -108,6 +109,26 @@ class HomeViewModel : BaseViewModel(), Observable {
                             GeneralResponseModel::class.java
                         )
                         upgradeResponseData.value = json
+                    }
+                }
+            }
+            setLoadingState(LoadingState.LOADED())
+        }
+    }
+
+    fun requestDeleteAccount(userId: String) {
+        CoroutinesBase.main {
+            setLoadingState(LoadingState.LOADING())
+            val response = homeRepo.requestDeleteAccount(userId)
+            updateView(ApiCodes.REQUEST_DELETE_ACCOUNT,response) {
+                when(it) {
+                    is API_VIEWMODEL_DATA.API_SUCCEED -> {
+                        msg = "";
+                        val json = Gson().fromJson(
+                            Gson().toJson(it.data),
+                            GeneralResponseModel::class.java
+                        )
+                        deleteResponseData.value = json
                     }
                 }
             }

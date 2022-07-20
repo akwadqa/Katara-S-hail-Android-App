@@ -37,4 +37,10 @@ class HomeRepo : GenericApiRequest<Any>() {
         }
     }
 
+    suspend fun requestDeleteAccount(userId: String) : Any? {
+        return apiRequest {
+            ApiManager.apiClient.requestDeleteAccount(AccountStatusParamModel(key = userId, value = "Z3Af%=JC95FNe23Q2ma+-5TK3WG--XU+"))
+        }
+    }
+
 }

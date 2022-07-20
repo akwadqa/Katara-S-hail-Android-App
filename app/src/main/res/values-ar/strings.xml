@@ -243,6 +243,8 @@
 
     <string name="upgrade">ترقية إلى مزايد جديد</string>
 
+    <string name="delete">حذف الحساب</string>
+
     <string name="title_activity_main3">MainActivity3</string>
 
     <string name="menu_gallery">معرض الصور</string>

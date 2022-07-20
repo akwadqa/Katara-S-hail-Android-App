@@ -35,5 +35,6 @@ object ApiEndPoints {
     const val GET_COUNTRIES= "Utility/GetContry"
     const val GET_AUCTION_IS_FOR_QATARI= "Utility/AuctionIsForQatari"
     const val REQUEST_ACCOUNT_UPGRADE= "Member/RequesttAccountUpgrade"
+    const val REQUEST_DELETE_ACCOUNT= "Member/DeleteUser"
 
 }

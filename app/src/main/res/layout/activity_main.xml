@@ -382,24 +382,49 @@
                                 style="@style/normal"
                                 android:textSize="@dimen/normal" />
 
-                            <TextView
-                                android:id="@+id/tv_upgrade"
-                                style="@style/normal"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
                                 android:layout_marginTop="@dimen/_10sdp"
-                                android:background="@drawable/button_rounded_more"
-                                android:drawablePadding="@dimen/_5sdp"
-                                android:gravity="center"
-                                android:paddingLeft="@dimen/_10sdp"
-                                android:paddingTop="@dimen/_5sdp"
-                                android:paddingRight="@dimen/_10sdp"
-                                android:paddingBottom="@dimen/_5sdp"
-                                android:text="@string/upgrade"
-                                android:textColor="@color/white"
-                                android:textSize="@dimen/very_small"
-                                android:visibility="gone" />
+                                android:layout_gravity="center">
+                                <TextView
+                                    android:id="@+id/tv_upgrade"
+                                    style="@style/normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:background="@drawable/button_rounded_more"
+                                    android:drawablePadding="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_10sdp"
+                                    android:paddingTop="@dimen/_5sdp"
+                                    android:paddingRight="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_5sdp"
+                                    android:text="@string/upgrade"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/very_small"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    android:visibility="gone"/>
+                                <TextView
+                                    android:id="@+id/tv_delete"
+                                    style="@style/normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:background="@drawable/button_rounded_more"
+                                    android:drawablePadding="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_10sdp"
+                                    android:paddingTop="@dimen/_5sdp"
+                                    android:paddingRight="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_5sdp"
+                                    android:text="@string/delete"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/very_small"/>
+                            </LinearLayout>
 
                         </LinearLayout>
 

@@ -246,6 +246,8 @@
 
     <string name="upgrade">Upgrade To New Bidder</string>
 
+    <string name="delete">Delete Account</string>
+
     <string name="title_activity_main3">MainActivity3</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

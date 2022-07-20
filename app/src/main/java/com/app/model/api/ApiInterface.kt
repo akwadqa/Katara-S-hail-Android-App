@@ -49,6 +49,10 @@ interface ApiInterface {
     @POST(ApiEndPoints.REQUEST_ACCOUNT_UPGRADE)
     suspend fun requestAccountUpgrade(@Body params: AccountStatusParamModel): Response<Any>
 
+    @Headers("Content-Type: application/json")
+    @POST(ApiEndPoints.REQUEST_DELETE_ACCOUNT)
+    suspend fun requestDeleteAccount(@Body params: AccountStatusParamModel): Response<Any>
+
     @GET(ApiEndPoints.GET_NEWS)
     suspend fun getNewsApi(): Response<Any>
 
