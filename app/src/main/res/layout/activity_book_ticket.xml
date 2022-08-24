@@ -190,7 +190,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_5sdp" />
 
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -212,19 +211,6 @@
                         android:drawableStart="@drawable/bx"
                         android:drawablePadding="@dimen/_5sdp"
                         android:text="@string/only_those_whose_are_vaccinated_against_covid_19_virus_are_allowed"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:textColor="@color/grey"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:textSize="@dimen/small"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        style="@style/normal"
-                        android:drawableStart="@drawable/bx"
-                        android:drawablePadding="@dimen/_5sdp"
-                        android:text="@string/children_under_the_age_of_12_are_not_allowed_to_enter_the_exhibition"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:textColor="@color/grey"
                         android:layout_marginTop="@dimen/_10sdp"
